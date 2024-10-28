@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+:root{
+--Violet: hsl(257, 40%, 49%);
+--Soft_Magenta: hsl(300, 69%, 71%);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Open Sans", sans-serif;
+    background: var(--Violet) url(images/bg-mobile.svg);
+    background-repeat: no-repeat;
+}
+.main_container{
+    width: 598px;
+    height: 1448px;
+    margin: 75px auto 40px;
+    padding: 0 20px;
+    /* no entiendo para que este padding, lo descentra, al hacer más pequeño el contenedor que la imagen */
+    /* ENTIENDO QUE img es un elemento inline +/- por eso no responde al alineado y por eso alineamos el contenedor--------- */
+}
+/* ---------------------HEADER-------------------- */
+.section1{
+    border: 3px solid white;
+    height: 724px;
+}
+/* .logo{ */
+#logo-container img{
+    width: 180px;
+    margin-bottom: 137px;
+}
+/* .comentarios{ */
+
+#mockup-container img{
+    /* width: 592px; */
+    width: 552px;
+    /* overflow-clip-margin: border-box; */
+}
+
+/* ---------------------CENTRAL SECTION-------------------- */
+.section2{
+    width: 552px;
+}
+.central h1{
+    width: 552px;
+    margin: 40px auto 40px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 3em;
+    text-align: center;
+    color: white;
+}
+.central p{
+    text-align: center;
+    color: white;
+    font-size: 1.8em;
+    font-weight: 400;
+    line-height: 50px;
+
+}
+.central button{
+    width: 320px;
+    height: 60px;
+    border-radius: 40px;
+    border-style: none;
+    margin: 40px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--Violet);
+    font-size: 1.3em;
+}
+.central button:active{
+    background-color: var(--Soft_Magenta);
+    color: white;
+}
+/* ---------------------ICONS SOCIAL MEDIA SECTION-------------------- */
+.social_media{
+    width: fit-content;
+    margin: 0 auto;
+}
+.social_media a{
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    color: white;
+    border: 1px solid white ;
+    border-radius: 50%;
+    margin: 30px 3px;
+    /* padding: 5px; */
+    text-align: center;
+    box-sizing: content-box;
+}
+.social_media a:visited{
+    border-color: red;
+    color: red;
+}
+.social_media a:hover{
+    border-color: orange;
+    color: orange;
+}
+.social_media a:active{
+    color: var(--Soft_Magenta);
+    border-color: var(--Soft_Magenta);
+}
+/* ---------------------FOOTER-------------------- */
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+
+/* ---------------------VIEW 1080-------------------- */
+
+@media only screen and (min-width:1080px){
+    .main_container{
+        width: 1300px;
+        height: 700px;
+        /* margin: 74px auto; */
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+    }
+
+
+}
