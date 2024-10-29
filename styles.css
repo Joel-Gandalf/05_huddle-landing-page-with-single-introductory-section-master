@@ -23,14 +23,14 @@ body{
     width: 595px;
     height: 1448px;
     margin: 75px auto 40px;
-    border: 2px solid white;
+    /* border: 2px solid white; */
     /* padding: 0 20px; */
     /* no entiendo para que este padding, lo descentra, al hacer más pequeño el contenedor que la imagen */
     /* ENTIENDO QUE img es un elemento inline +/- por eso no responde al alineado y por eso alineamos el contenedor--------- */
 }
 /* ---------------------HEADER-------------------- */
 .section1{
-    border: 3px solid white;
+    /* border: 3px solid white; */
     height: 724px;
 }
 /* .logo{ */
@@ -51,7 +51,7 @@ body{
     /* width: 552px; */
     /* width: 595px; */
     height: 724px;
-    border: 2px solid white;
+    /* border: 2px solid white; */
 }
 .central h1{
     /* width: 552px; */
