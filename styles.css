@@ -16,12 +16,15 @@ body{
     font-family: "Open Sans", sans-serif;
     background: var(--Violet) url(images/bg-mobile.svg);
     background-repeat: no-repeat;
+    background-size: 100%;
 }
 .main_container{
-    width: 598px;
+    /* width: 598px; */
+    width: 595px;
     height: 1448px;
     margin: 75px auto 40px;
-    padding: 0 20px;
+    border: 2px solid white;
+    /* padding: 0 20px; */
     /* no entiendo para que este padding, lo descentra, al hacer más pequeño el contenedor que la imagen */
     /* ENTIENDO QUE img es un elemento inline +/- por eso no responde al alineado y por eso alineamos el contenedor--------- */
 }
@@ -38,77 +41,124 @@ body{
 /* .comentarios{ */
 
 #mockup-container img{
-    /* width: 592px; */
-    width: 552px;
+    width: 595px;
+    /* width: 552px; */
     /* overflow-clip-margin: border-box; */
 }
 
 /* ---------------------CENTRAL SECTION-------------------- */
 .section2{
-    width: 552px;
+    /* width: 552px; */
+    /* width: 595px; */
+    height: 724px;
+    border: 2px solid white;
 }
 .central h1{
-    width: 552px;
-    margin: 40px auto 40px;
+    /* width: 552px; */
+    /* margin: 0 auto 40px; */
+    height: 170px;
+
     font-family: "Poppins", sans-serif;
     font-weight: 600;
-    font-size: 3em;
+    /* font-size: 2.9em; */
+    font-size: 46px;
     text-align: center;
     color: white;
 }
 .central p{
     text-align: center;
     color: white;
-    font-size: 1.8em;
+    /* font-size: 1.8em; */
+    font-size: 31px;
     font-weight: 400;
-    line-height: 50px;
+    line-height: 47px;
+
+    height: 280px;
 
 }
 .central button{
-    width: 320px;
-    height: 60px;
-    border-radius: 40px;
+    /* width: 400px;
+    height: 86px; */
+    border-radius: 50px;
     border-style: none;
-    margin: 40px auto;
+    /* margin: 50px auto; */
+    margin: 0 auto;
+
+    display: flex;
+    /* Al utilizar button en vez de div he de usar display flex o block para que margin 0 auto funcione, ya que es un elemento en linea */
+    color: var(--Violet);
+    font-size: 1.4em;
+    overflow: hidden;
+}
+button a{
+    text-decoration: none;
+    width: 400px;
+    height: 86px;
+    /* Añadimos width y height aquí para que el área del click(enlace) ocupe todo el botón */
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--Violet);
-    font-size: 1.3em;
+    /* O bien, display block y añadir padding */
 }
-.central button:active{
+.central button a:hover{
     background-color: var(--Soft_Magenta);
     color: white;
 }
+.central button a:active{
+    background-color: orange;
+    color: white;
+}
+
+/*  -------------NO SE SUELE HACER DE ESTA MANERA. UN ELEMENTO <A> SE CONTIENE EN UN DIV. UN ELEMENTO <BUTTON> SE UTILIZA O EN FORMULARIOS O PARA EJECUTAR UNA ACCIÓN CON JAVASCRIPT--------------- */
+
+
 /* ---------------------ICONS SOCIAL MEDIA SECTION-------------------- */
 .social_media{
-    width: fit-content;
-    margin: 0 auto;
+    /* width: fit-content;
+    margin: 0 auto; */
+    
+    /* NO SE HACE ASÍ PORQUE DESPUÉS NO SE PUEDE AÑADIR ESPACIO ENTRE ELEMENTOS SIN AÑADIR ESPACIOS AL PRINCIPIO Y AL FINAL */
+
+    /* -----------------OPCIÓN 1 DE CODING TUBE------------------ */
+    /* text-align: center; */
+
+    /* PARA USAR ESTO DEBERIAMOS HACERLO EN UN CONTENEDOR QUE ENGLOBASE A .SOCIAL MEDIA Y DESPUÉS AÑADIR UN WIDTH A .SOCIAL MEDIA Y INLINE-FLEX Y SPACE-BETWEEN */
+    /* Añadimos inline-block o inline-flex para que text-align funcione, ya que TEXT-ALIGN SOLO FUNCIONA CON ELEMENTOS EN LINEA */
+
+    /* Se puede hacer de las dos maneras añadiendo un margin sólo si están en el centro todo el tiempo */
+    
+    /* -----------------OPCIÓN 2 MI OPCIÓN------------------ */
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 .social_media a{
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
+    width: 58px;
+    height: 58px;
+    font-size: 26px;
     color: white;
-    border: 1px solid white ;
+    border: 2px solid white ;
     border-radius: 50%;
-    margin: 30px 3px;
-    /* padding: 5px; */
+    margin: 122px 0 0;
+    padding-top: 15px;
     text-align: center;
-    box-sizing: content-box;
+    /* box-sizing: content-box; */
+    text-decoration: none;
 }
 .social_media a:visited{
     border-color: red;
     color: red;
 }
 .social_media a:hover{
+    color: var(--Soft_Magenta);
+    border-color: var(--Soft_Magenta);
+    cursor: pointer;
+}
+.social_media a:active{
     border-color: orange;
     color: orange;
 }
-.social_media a:active{
-    color: var(--Soft_Magenta);
-    border-color: var(--Soft_Magenta);
-}
+
 /* ---------------------FOOTER-------------------- */
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
@@ -116,15 +166,72 @@ body{
 
 /* ---------------------VIEW 1080-------------------- */
 
-@media only screen and (min-width:1080px){
+@media only screen and (min-width:1284px){
+    body{
+        background: var(--Violet) url(images/bg-desktop.svg);
+        background-size: unset;
+    }
     .main_container{
-        width: 1300px;
+        width: 1284px;
         height: 700px;
-        /* margin: 74px auto; */
-        display: flex;
-        justify-content: center;
-        gap: 60px;
+        margin: 60px auto 0;
+        /* display: flex; */
+        /* justify-content: center; */
+        /* gap: 60px; */
+        /* ME GUSTA MÁS A MI MANERA */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    /* section{
+        height: 700px;
+    } */
+    /* NO ENTIENDO POR QUÉ NO ME FUNCIONA------- */
+    
+    /* -------------------------SECTION1------------------------ */
+    .section1{
+        width: 753px;
+        height: 700px;
+    }
+    #logo-container img{
+        margin-bottom: 120px;
+    }
+    #mockup-container img{
+        width: 696px;
     }
 
+    /* -------------------------SECTION2------------------------ */
+    .section2{
+        height: 700px;
+    }
+    .central h1{
+        height: 133px;
+        margin-top: 165px;
+        font-size: 39px;
+        text-align: left;
+        padding-right: 93px;
+    }
+    .central p{
+        height: 98px;
+        font-size: 18px;
+        text-align: left;
+        padding-right: 17px;
+        line-height: 25px;
+        font-weight: 350;
+    }
+    .central button{
+        /* justify-content: start; */
+        margin: 14px 0 0;
+    }
+    .central button a{
+        width: 200px;
+        height: 58px;
+        font-size: 20px; 
+    }
+    .social_media{
+        justify-content: end;
+    }
+    .social_media a{
+        margin: 170px 0 0;
+    }
 
 }
